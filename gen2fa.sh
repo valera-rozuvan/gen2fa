@@ -147,6 +147,10 @@ fi
 
 read ACCOUNT
 
+if [[ "$DEBUG_MODE" == "true" ]]; then
+  echo -e "\nACCOUNT: '${ACCOUNT}'"
+fi
+
 PASS_ACCOUNT_RAW=$(pass two_fa | grep "${ACCOUNT}" || true)
 PASS_ACCOUNT=""
 if [[ -n "$PASS_ACCOUNT_RAW" && "$PASS_ACCOUNT_RAW" != " " ]]; then
@@ -173,8 +177,20 @@ fi
 ####
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
-TWO_FA_SECRET_RAW=$(pass "${PASS_ACCOUNT}" | grep "2FA secret")
-TWO_FA_SECRET=${TWO_FA_SECRET_RAW/2FA secret: /}
+if [[ "$DEBUG_MODE" == "true" ]]; then
+  echo -e "\nSCRIPT_DIR: '${SCRIPT_DIR}'"
+fi
+
+TWO_FA_SECRET_RAW=$(pass "${PASS_ACCOUNT}" | grep "2FA secret" || true)
+TWO_FA_SECRET=""
+
+if [[ -n "$TWO_FA_SECRET_RAW" && "$TWO_FA_SECRET_RAW" != " " ]]; then
+  TWO_FA_SECRET=${TWO_FA_SECRET_RAW/2FA secret: /}
+else
+  echo -e "ERROR! Could not get 2FA secret string for account \"${ACCOUNT}\"!"
+  exit 1
+fi
+
 TWO_FA_CODE=$(TWO_FA_SECRET="${TWO_FA_SECRET}" python3 "${SCRIPT_DIR}"/otp.py)
 
 if [[ "$DEBUG_MODE" == "true" ]]; then
