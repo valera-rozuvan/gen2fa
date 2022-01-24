@@ -109,6 +109,27 @@ $ gen2fa --version
 gen2fa v1.0
 ```
 
+## Security implications
+
+Some thoughts on security behind 2FA, and the approach taken by the `gen2fa` utility.
+
+When you enable 2FA on some site (or for some service), you will use something like [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) to scan a bar code, and then enter a newly generated 2FA code to proceed. Most likely the site (or service) will also give you several 2FA backup codes to be used in case of emergencies. Some scenarios when you would need the 2FA backup codes:
+
+- you lost the phone with the authenticator app
+- the phone got damaged (can't repair)
+
+In an ideal world, you will print the backup codes on paper, and stash the paper in a safe place. If you lose your 2FA device, you have 2FA backup codes on paper, and can recover access to your account.
+
+The safest way to protect your accounts is to store the different kinds of login credentials separately. Passwords should be stored in one secure place, 2FA secrets (along with ability to generate 2FA codes) in another secure place, and 2FA backup codes in a third secure place. This way, even if one of the secret storage places gets compromised, the attacker has only partial login credentials, and can't access your account.
+
+In a less ideal world, what happens most of the time, you save everything (including the 2FA backup codes) in some password manager. The author of `gen2fa` is using [pass](https://www.passwordstore.org/) to store the 2FA backup codes. When using pass, everything is encrypted using your private [GPG](https://gnupg.org/) key. If the pass store is compromised, then the backup codes are revealed, and the adversary receives access to your accounts. However, if you follow sane security guidelines, it is very unlikely that someone will compromise your pass store. First, your GPG private key has to be compromised. Second, your pass store has to be compromised.
+
+In any case, if you are already storing everything in a pass store, storing the 2FA secret along does not weaken the security of your accounts.
+
+NOTE! For highly critical production systems, care needs to be taken when dealing with security matters. In such cases, the author of `gen2fa` recommends storing different types of login credentials separately. Therefore, the author of `gen2fa` does not advocate the use of `gen2fa` for critical production system accounts.
+
 ## License
 
-This project is licensed under the MIT license. See [LICENSE](./LICENSE) for more details. Copyright (c) 2022 [Valera Rozuvan](https://valera.rozuvan.net/).
+This project is licensed under the MIT license. See [LICENSE](./LICENSE) for more details.
+
+Copyright (c) 2022 [Valera Rozuvan](https://valera.rozuvan.net/).
