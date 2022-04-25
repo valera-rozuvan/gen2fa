@@ -2,6 +2,8 @@
 
 generate 2FA codes helper utility
 
+![gen2fa video preview](./video_preview/gen2fa-sample.gif)
+
 ## About
 
 We want to use [pass](https://www.passwordstore.org/) to securely store 2FA secrets, and [onetimepass](https://pypi.org/project/onetimepass/) to generate the 2FA codes. We want a nice Bash script to tie the two together. This will:
