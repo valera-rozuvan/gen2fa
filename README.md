@@ -79,6 +79,10 @@ $ echo $TWO_FA_CODE
 123456
 ```
 
+![gen2fa automation video preview](./video_preview/gen2fa-sample-2.gif)
+
+NOTE: If, for automation purposes, you want to skip GnuPG asking for a passphrase - you can setup GnuPG to keep credentials cached for a really long time. You just enter the passphrase one time, and forget about it. See `default-cache-ttl` and `max-cache-ttl` configuration options in [GnuPG docs](https://www.gnupg.org/documentation/manuals/gnupg/Agent-Options.html). Set both `ttl` options to a year or so (say, 34560000 seconds, which is around 400 days), and you should be fine.
+
 ## Optional arguments
 
 Available CLI arguments, understood by the script:
