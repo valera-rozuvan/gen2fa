@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# gen2fa v1.0 | https://github.com/valera-rozuvan/gen2fa
+# gen2fa v1.1 | https://github.com/valera-rozuvan/gen2fa
 # copyright (c) 2022 Valera Rozuvan
 # license: MIT
 
@@ -86,7 +86,7 @@ if [[ "$DEBUG_MODE" == "true" ]]; then
 fi
 
 if [[ "$VERSION_MODE" == "true" ]]; then
-  echo -e "gen2fa v1.0\n"
+  echo -e "gen2fa v1.1\n"
   echo "source code: https://github.com/valera-rozuvan/gen2fa"
   echo "copyright (c) 2022 Valera Rozuvan"
   echo "license: MIT"

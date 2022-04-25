@@ -102,7 +102,7 @@ Reload your `.bashrc` (one way is to close & open your terminal). Then you can d
 
 ```shell
 $ gen2fa --version
-gen2fa v1.0
+gen2fa v1.1
 ```
 
 ## Security implications
