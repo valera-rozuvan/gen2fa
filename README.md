@@ -22,11 +22,7 @@ Why did I create the `gen2fa` helper utility? Because pulling out my mobile phon
 - [xclip](https://github.com/astrand/xclip)
 - [sed](https://www.gnu.org/software/sed/)
 
-You also need to install the Python module [onetimepass](https://pypi.org/project/onetimepass/). You can do so by running:
-
-```shell
-pip3 install onetimepass
-```
+The Python module [onetimepass](https://pypi.org/project/onetimepass/) is provided in this source tree. This is because we need [a fix](https://github.com/tadeck/onetimepass/pull/22), which has not been merged into the original project for a long time.
 
 ## How this works
 
