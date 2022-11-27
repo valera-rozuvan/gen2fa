@@ -66,7 +66,7 @@ For the standard case when you just need to get a 2FA code, and login to some we
 
 ```shell
 $ gen2fa -c
-Enter the account to generate 2FA: acc2 name 
+Enter the account to generate 2FA: acc2 name
 
 2FA code '123456' was copied to clipboard. Will clear in 6 seconds...
 ```
@@ -130,8 +130,20 @@ In any case, if you are already storing everything in a pass store, storing the 
 
 NOTE! For highly critical production systems, care needs to be taken when dealing with security matters. In such cases, the author of `gen2fa` recommends storing different types of login credentials separately. Therefore, the author of `gen2fa` does not advocate the use of `gen2fa` for critical production system accounts.
 
-## License
+---
 
-This project is licensed under the MIT license. See [LICENSE](./LICENSE) for more details.
+## license
 
-Copyright (c) 2022 [Valera Rozuvan](https://valera.rozuvan.net/).
+The project `'gen2fa'` is licensed under the MIT License.
+
+See [LICENSE](./LICENSE) for more details.
+
+The latest source code can be retrieved from one of several mirrors:
+
+1. [github.com/valera-rozuvan/gen2fa](https://github.com/valera-rozuvan/gen2fa)
+
+2. [gitlab.com/valera-rozuvan/gen2fa](https://gitlab.com/valera-rozuvan/gen2fa)
+
+3. [git.rozuvan.net/gen2fa](https://git.rozuvan.net/gen2fa)
+
+Copyright (c) 2022 [Valera Rozuvan](https://valera.rozuvan.net/)
