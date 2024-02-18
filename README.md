@@ -146,4 +146,4 @@ The latest source code can be retrieved from one of several mirrors:
 
 3. [git.rozuvan.net/gen2fa](https://git.rozuvan.net/gen2fa)
 
-Copyright (c) 2022 [Valera Rozuvan](https://valera.rozuvan.net/)
+Copyright (c) 2022-2024 [Valera Rozuvan](https://valera.rozuvan.net/)
